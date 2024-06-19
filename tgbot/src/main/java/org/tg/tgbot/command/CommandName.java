@@ -13,6 +13,10 @@ public enum CommandName {
     CREATE_COURIER("/create_courier"),
     COURIER_INFO("/courier"),
 
+    CREATE_ORDER("/create_order"),
+
+    CREATE_USER("/create_user"),
+
     STAT("/stat"),
     HELP("/help");
 

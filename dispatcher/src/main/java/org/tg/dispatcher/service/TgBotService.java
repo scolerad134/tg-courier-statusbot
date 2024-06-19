@@ -78,6 +78,7 @@ public class TgBotService extends TelegramLongPollingBot {
         commands.add(new BotCommand("/start", "запускает работу бота"));
         commands.add(new BotCommand("/create_courier", "запускает работу бота"));
         commands.add(new BotCommand("/couriers", "запускает работу бота"));
+        commands.add(new BotCommand("/create_order", "запускает работу бота"));
 
 
         try {

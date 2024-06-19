@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.UUID;
 
 @Data
 @Builder
@@ -17,7 +18,8 @@ import java.util.List;
 @Table(name = "users")
 public class User {
     @Id
-    private String id;
+    @Builder.Default
+    private String id = UUID.randomUUID().toString();
     private String name;
     private String nickName;
 

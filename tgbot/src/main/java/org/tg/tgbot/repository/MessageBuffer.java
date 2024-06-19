@@ -20,9 +20,7 @@ public class MessageBuffer {
     public String getMessage() {
         System.out.println("MessageBuffer.getMessage: " + message + " "+ Thread.currentThread().getName());
         System.out.println();
-        while(message == null) {
-//            System.out.println("m");
-        }
+        while(message == null) {} // ждем пока не придет сообщение от пользователя
         System.out.println("after while: " + message + " " + Thread.currentThread().getName());
         String response = this.message;
         this.message = null;

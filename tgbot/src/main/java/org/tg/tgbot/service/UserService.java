@@ -16,7 +16,7 @@ public class UserService {
 
     UserRepository userRepository;
 
-    public User findById(Long id) {
+    public User getUserById(Long id) {
         return userRepository.findById(id).orElse(null);
     }
 
@@ -32,11 +32,11 @@ public class UserService {
         return userRepository.findAll();
     }
 
-    public User findByName(String name) {
-        return userRepository.findByName(name);
+    public User getUserByName(String name) {
+        return userRepository.findByName(name).orElse(null);
     }
 
-    public User findByNickName(String nick) {
-        return userRepository.findByNickName(nick);
+    public User getUserByNick(String nick) {
+        return userRepository.findByNickName(nick).orElse(null);
     }
 }

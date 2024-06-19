@@ -23,18 +23,24 @@ public class CommandContainer {
 
     public CommandContainer(
             List<String> admins,
+            UnknownCommand unknownCommand,
             CreateCourierCommand createCourierCommand,
             GetCouriersCommand getCouriersCommand,
-            GetCourierInfoCommand getCourierInfoCommand) {
+            GetCourierInfoCommand getCourierInfoCommand,
+            CreateOrderCommand createOrderCommand,
+            CreateUserCommand createUserCommand) {
 
         this.commands = new HashMap<>();
         this.admins = admins;
+        this.unknownCommand = unknownCommand;
 
         commands.put(CREATE_COURIER.getCommandName(), createCourierCommand);
         commands.put(GET_ALL_COURIER.getCommandName(), getCouriersCommand);
         commands.put(COURIER_INFO.getCommandName(), getCourierInfoCommand);
+        commands.put(CREATE_ORDER.getCommandName(), createOrderCommand);
+        commands.put(CREATE_USER.getCommandName(), createUserCommand);
 
-        unknownCommand = new UnknownCommand(null);
+
     }
 
     public Command getCommand(String commandName, String username) {

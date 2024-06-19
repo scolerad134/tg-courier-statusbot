@@ -11,6 +11,8 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.UUID;
+
 @Data
 @Builder
 @NoArgsConstructor
@@ -20,12 +22,13 @@ import lombok.NoArgsConstructor;
 public class Order {
 
     @Id
-    private String id;
+    @Builder.Default
+    private String id = UUID.randomUUID().toString();
     private String name;
     private String status;
     private String type;
-    private String price;
-    private String quantity;
+    private double price;
+    private double quantity;
 
     @ManyToOne
     @JoinColumn(name = "courier_id",referencedColumnName="id")

@@ -35,6 +35,7 @@ public class DistributeService {
             commandContainer.getCommand(message.getMessage(), message.getNickName()).execute();
         } else {
             System.out.println("manage user message: " + message.getMessage() + " " + Thread.currentThread().getName());
+
             messageBuffer.setMessage(message.getMessage());
         }
     }
